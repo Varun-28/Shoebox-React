@@ -1,0 +1,11 @@
+@import url('../stylesheets/styles.css');
+
+.shoebox-footer{
+    background-color: var(--primary-color);
+    color: var(--base-color);
+    text-align: center;
+}
+
+.social-links a i{
+    font-size: 2rem;
+}
