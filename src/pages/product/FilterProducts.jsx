@@ -1,22 +1,11 @@
-import {React, useEffect, useState} from 'react';
-import axios from 'axios';
+import {React} from 'react';
 import "./product.css";
 import {Card} from "../../components/Card";
+import { useProduct } from '../../utilities/product-context';
 
 function FilterProducts({drawerVisibility, setDrawerVisibility}) {
 
-    const [filteredProducts, setFilteredProducts] = useState([]);
-
-    useEffect(()=>{
-        try{
-            (async () => {
-                const response = await axios.get('/api/products');
-                setFilteredProducts(response.data.products);
-            })();
-        }catch(err){
-            console.log(err);
-        }
-    },[])
+    const {filteredProducts} = useProduct();
 
   return (
     <section className="product-section">
