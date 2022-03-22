@@ -63,6 +63,13 @@ function FilterDrawer({drawerVisibility}) {
                 <input type="checkbox" value="boot-f" id="boot-f" />Boot</label>
                 </li>
             </ul>
+            <h5>Stocks</h5>
+            <ul>
+                <li>
+                <label htmlFor="inStock">
+                <input type="checkbox" value="inStock" id="inStock" />In Stock</label>
+                </li>
+            </ul>
         </div>
         <span className="hr-gray-line"></span>
         <div className="filter rating">
