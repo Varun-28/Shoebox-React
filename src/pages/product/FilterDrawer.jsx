@@ -63,13 +63,6 @@ function FilterDrawer({drawerVisibility}) {
                 <input type="checkbox" value="boot-f" id="boot-f" />Boot</label>
                 </li>
             </ul>
-            <h5>Stocks</h5>
-            <ul>
-                <li>
-                <label htmlFor="inStock">
-                <input type="checkbox" value="inStock" id="inStock" />In Stock</label>
-                </li>
-            </ul>
         </div>
         <span className="hr-gray-line"></span>
         <div className="filter rating">
@@ -90,6 +83,20 @@ function FilterDrawer({drawerVisibility}) {
             <input type="radio" name="price" value="l" id="low" />Price - low to high</label>
             <label htmlFor="high">
             <input type="radio" name="price" value="h" id="high" />Price - high to low</label>
+        </div>
+        <span className="hr-gray-line"></span>
+        <div className="filter stock-delivery">
+            <h4>Stock/Delivery</h4>
+            <ul>
+                <li>
+                <label htmlFor="inStock">
+                <input type="checkbox" value="inStock" id="inStock" />In Stock Only</label>
+                </li>
+                <li>
+                <label htmlFor="isFastDelivery">
+                <input type="checkbox" value="isFastDelivery" id="isFastDelivery" />Fast Delivery Only</label>
+                </li>
+            </ul>
         </div>
     </section>
   )

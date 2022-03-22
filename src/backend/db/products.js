@@ -14,7 +14,8 @@ export const products = [
     rating: "4.9",
     prodImage: require("../../assets/boot_1.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -24,7 +25,8 @@ export const products = [
     rating: "2.5",
     prodImage: require("../../assets/boot_2.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -34,7 +36,8 @@ export const products = [
     rating: "3.4",
     prodImage: require("../../assets/boot_3.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -44,7 +47,8 @@ export const products = [
     rating: "4.2",
     prodImage: require("../../assets/boot_4.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -54,7 +58,8 @@ export const products = [
     rating: "1.5",
     prodImage: require("../../assets/boot_5.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -64,7 +69,8 @@ export const products = [
     rating: "3.9",
     prodImage: require("../../assets/boot_6.webp"),
     categoryName: "boot-f",
-    inStock: false
+    inStock: false,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -74,7 +80,8 @@ export const products = [
     rating: "4.5",
     prodImage: require("../../assets/boot_7.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -84,7 +91,8 @@ export const products = [
     rating: "1.9",
     prodImage: require("../../assets/boot_8.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -94,7 +102,8 @@ export const products = [
     rating: "3.5",
     prodImage: require("../../assets/boot_9.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -104,7 +113,8 @@ export const products = [
     rating: "2.5",
     prodImage: require("../../assets/boot_10.webp"),
     categoryName: "boot-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -114,7 +124,8 @@ export const products = [
     rating: "4.1",
     prodImage: require("../../assets/casual_1f.webp"),
     categoryName: "casual-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: true
   },
   {
     _id: uuid(),
@@ -124,7 +135,8 @@ export const products = [
     rating: "3.9",
     prodImage: require("../../assets/casual_2f.webp"),
     categoryName: "casual-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -134,7 +146,8 @@ export const products = [
     rating: "2.5",
     prodImage: require("../../assets/casual_3f.webp"),
     categoryName: "casual-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -144,7 +157,8 @@ export const products = [
     rating: "4.5",
     prodImage: require("../../assets/casual_4f.webp"),
     categoryName: "casual-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -154,7 +168,8 @@ export const products = [
     rating: "2.9",
     prodImage: require("../../assets/casual_5f.webp"),
     categoryName: "casual-f",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -164,7 +179,8 @@ export const products = [
     rating: "3.5",
     prodImage: require("../../assets/casual_1.webp"),
     categoryName: "casual-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -174,7 +190,8 @@ export const products = [
     rating: "1.5",
     prodImage: require("../../assets/casual_2.webp"),
     categoryName: "casual-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -184,7 +201,8 @@ export const products = [
     rating: "4.5",
     prodImage: require("../../assets/casual_3.webp"),
     categoryName: "casual-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: true
   },
   {
     _id: uuid(),
@@ -194,7 +212,8 @@ export const products = [
     rating: "4.1",
     prodImage: require("../../assets/casual_4.webp"),
     categoryName: "casual-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -204,7 +223,8 @@ export const products = [
     rating: "3.9",
     prodImage: require("../../assets/casual_5.webp"),
     categoryName: "casual-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -214,7 +234,8 @@ export const products = [
     rating: "3.9",
     prodImage: require("../../assets/sports_1.webp"),
     categoryName: "sport-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -224,7 +245,8 @@ export const products = [
     rating: "4.1",
     prodImage: require("../../assets/sports_2.webp"),
     categoryName: "sport-m",
-    inStock: false
+    inStock: false,
+    isFastDelivery: true
   },
   {
     _id: uuid(),
@@ -234,7 +256,8 @@ export const products = [
     rating: "4.5",
     prodImage: require("../../assets/sports_3.webp"),
     categoryName: "sport-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -244,7 +267,8 @@ export const products = [
     rating: "3.5",
     prodImage: require("../../assets/sports_4.webp"),
     categoryName: "sport-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -254,7 +278,8 @@ export const products = [
     rating: "4.2",
     prodImage: require("../../assets/sports_5.webp"),
     categoryName: "sport-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: true
   },
   {
     _id: uuid(),
@@ -264,7 +289,8 @@ export const products = [
     rating: "4.1",
     prodImage: require("../../assets/formal_1.webp"),
     categoryName: "formal-m",
-    inStock: false
+    inStock: false,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -274,7 +300,8 @@ export const products = [
     rating: "2.5",
     prodImage: require("../../assets/formal_2.webp"),
     categoryName: "formal-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -284,7 +311,8 @@ export const products = [
     rating: "3.8",
     prodImage: require("../../assets/formal_3.webp"),
     categoryName: "formal-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   },
   {
     _id: uuid(),
@@ -294,7 +322,8 @@ export const products = [
     rating: "4.5",
     prodImage: require("../../assets/formal_4.webp"),
     categoryName: "formal-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: true
   },
   {
     _id: uuid(),
@@ -304,6 +333,7 @@ export const products = [
     rating: "3.5",
     prodImage: require("../../assets/formal_5.webp"),
     categoryName: "formal-m",
-    inStock: true
+    inStock: true,
+    isFastDelivery: false
   }
 ];
