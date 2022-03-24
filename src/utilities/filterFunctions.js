@@ -1,5 +1,5 @@
 export function sortFun(state, products) {
-    const sortedProducts = products.sort((a, b) => a["price"] - b["price"]);
+    const sortedProducts = products.sort((a, b) => Number(a["price"]) - Number(b["price"]));
     if (state.sorting === "low") return sortedProducts;
     if (state.sorting === "high") return sortedProducts.reverse();
     return products;
