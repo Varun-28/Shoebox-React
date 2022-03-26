@@ -24,13 +24,14 @@ function FilterProducts({drawerVisibility, setDrawerVisibility}) {
             {
                 filteredProducts.length === 0 ?
                 <p>Loading Products ...</p> :
-                filteredProducts.map(({id, brand, title, prodImage, rating, price, inStock}) => 
-                <Card key={id} 
+                filteredProducts.map(({_id, brand, title, prodImage, rating, price, inStock}) => 
+                <Card key={_id} 
                 brand={brand} 
                 title={title} 
                 prodImage={prodImage} 
                 rating={rating} 
-                price={price} 
+                price={price}
+                _id={_id}
                 inStock={inStock} />)
             }
         </div>

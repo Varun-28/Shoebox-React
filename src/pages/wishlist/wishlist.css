@@ -1,0 +1,9 @@
+@import url('../../stylesheets/styles.css');
+
+.wishlist-container{
+    text-align: center;
+}
+
+.dismiss-card{
+    box-shadow: var(--card-shadow);
+}

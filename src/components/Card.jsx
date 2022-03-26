@@ -1,7 +1,8 @@
-import React from 'react'
+import React from 'react';
+import {useWishlist} from "../utilities/wishlist-context";
 
 function Card({
-    id,
+    _id,
     brand,
     title,
     price,
@@ -9,6 +10,13 @@ function Card({
     prodImage,
     inStock
 }) {
+
+    const {wishlistDispatch} = useWishlist();
+    function wishlistHandler(){
+      wishlistDispatch({type:"ADD-TO-WISHLIST", 
+      payload:{brand, _id, price, title, rating, prodImage}});
+    }
+
   return (
     <div className="card card-vertical badged-card">
     <div className="card-head">
@@ -23,7 +31,7 @@ function Card({
     </div>
     <div className="card-buttons">
         <button className="card-btn-primary">Add To Cart</button>
-        <button className="card-btn-icon"><i className="far fa-heart"></i></button>
+        <button className="card-btn-icon" onClick={wishlistHandler}><i className="far fa-heart"></i></button>
     </div>
     {!inStock && <div className="card-overlay">OUT OF STOCK</div>}
     <div className="card-rating">{rating} <i className="fas fa-star"></i></div>
