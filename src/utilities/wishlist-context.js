@@ -3,7 +3,7 @@ import { wishlistFun } from "./wishlistFun";
 
 const WishlistContext = createContext();
 
-const WhishlistProvider =({children}) =>{
+const WishlistProvider =({children}) =>{
     const [wishlistState, wishlistDispatch] = useReducer(wishlistFun, {
         msg: "",
         quantity:0,
@@ -18,4 +18,4 @@ const WhishlistProvider =({children}) =>{
 }
 
 const useWishlist = () => useContext(WishlistContext);
-export {useWishlist, WhishlistProvider}
+export {useWishlist, WishlistProvider}
