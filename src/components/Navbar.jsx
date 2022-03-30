@@ -3,9 +3,11 @@ import Logo from "../assets/logo_svg.svg";
 import {Link} from "react-router-dom";
 import "../stylesheets/navbar.css";
 import { useWishlist } from '../utilities/wishlist-context';
+import { useCart } from '../utilities/cart-context';
 
 export function Navbar() {
     const {wishlistState} = useWishlist();
+    const {cartState} = useCart()
   return (
     <header className="shoebox-navbar">
         <nav>
@@ -34,7 +36,7 @@ export function Navbar() {
                     <Link to="/cart">
                         <div className="badge-container">
                             <i className="shopping-cart fa-solid fa-cart-shopping">
-                                <span className="badge badge-ico">0</span>
+                                <span className="badge badge-ico">{cartState.quantity}</span>
                             </i>
                         </div>
                     </Link>

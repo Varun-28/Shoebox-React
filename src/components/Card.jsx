@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCart } from '../utilities/cart-context';
 import {useWishlist} from "../utilities/wishlist-context";
 
 function Card({
@@ -17,6 +18,12 @@ function Card({
       payload:{brand, _id, price, title, rating, prodImage}});
     }
 
+    const {cartDispatch} = useCart();
+    function cartHandler(){
+      cartDispatch({type:"ADD-TO-CART", 
+      payload:{brand, _id, price, title, rating, prodImage, prodQty: 1}});
+    }
+
   return (
     <div className="card card-vertical badged-card">
     <div className="card-head">
@@ -30,7 +37,7 @@ function Card({
         </div>
     </div>
     <div className="card-buttons">
-        <button className="card-btn-primary">Add To Cart</button>
+        <button className="card-btn-primary" onClick={cartHandler}>Add To Cart</button>
         <button className="card-btn-icon" onClick={wishlistHandler}><i className="far fa-heart"></i></button>
     </div>
     {!inStock && <div className="card-overlay">OUT OF STOCK</div>}
