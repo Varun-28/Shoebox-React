@@ -1,21 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useProduct } from '../utilities/product-context';
 
-function CategoryCards({categoryImage, categoryName}) {
+function CategoryCards({categoryImage, categoryName, categoryValue}) {
+
+    const {dispatch} = useProduct();
+    let navigate = useNavigate();
+
+    function categoryHandler(){
+        dispatch({type:"CATEGORY", payload: categoryValue});
+        navigate("/product");
+    }
   return (
     <div>
-        <Link to="/product">
-            <div className="card card-vertical card-shadow">
-                <div className="card-head">
-                    <div className="card-img">
-                        <img src={categoryImage} alt="card" />
-                    </div>
-                    <div className="card-texts">
-                        <h4 className="card-title">{categoryName}</h4>
-                    </div>
+        <div className="card card-vertical card-shadow"
+        onClick={categoryHandler}
+        >
+            <div className="card-head">
+                <div className="card-img">
+                    <img src={categoryImage} alt="card" />
+                </div>
+                <div className="card-texts">
+                    <h4 className="card-title">{categoryName}</h4>
                 </div>
             </div>
-        </Link>
+        </div>
     </div>
   )
 }
