@@ -24,6 +24,8 @@ function FilterProducts({ drawerVisibility, setDrawerVisibility }) {
       </div>
 
       {/* products */}
+      <h3 className="px-8 py-4">Products({filteredProducts.length})</h3>
+
       <div className="product-cards">
         {filteredProducts.length === 0 ? (
           <p>Loading Products ...</p>
