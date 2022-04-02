@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import heroImg from "../../assets/hero.svg";
+import heroImg from "../../assets/landing-img.png";
 import wave from "../../assets/wave.svg";
 import { CategoryCards } from "../../components/CategoryCards";
 import "./home.css";
