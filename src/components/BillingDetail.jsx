@@ -3,11 +3,11 @@ import { useCart } from "../utilities/cart-context";
 import "../pages/cart/cart.css";
 
 function BillingDetail() {
-  const {cartState} = useCart();
+  const { cartState } = useCart();
   const [price, setPrice] = useState({
     totalPrice: 0,
     deliveryCharge: 40,
-    prodPrice: 0
+    prodPrice: 0,
   });
 
   useEffect(() => {
@@ -16,10 +16,13 @@ function BillingDetail() {
         (prev, curr) => prev + Number(curr.price) * Number(curr.prodQty),
         0
       );
-      setPrice(val => ({...val, totalPrice: priceSum + val.deliveryCharge, 
-        prodPrice: priceSum}));
+      setPrice((val) => ({
+        ...val,
+        totalPrice: priceSum + val.deliveryCharge,
+        prodPrice: priceSum,
+      }));
     } else {
-      setPrice(val => ({...val, totalPrice: 0, prodPrice: 0}));
+      setPrice((val) => ({ ...val, totalPrice: 0, prodPrice: 0 }));
     }
   }, [cartState]);
 

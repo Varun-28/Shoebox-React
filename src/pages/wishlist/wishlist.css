@@ -1,9 +1,9 @@
 @import url('../../stylesheets/styles.css');
 
-.wishlist-container{
+.wishlist-container {
     text-align: center;
 }
 
-.dismiss-card{
+.dismiss-card {
     box-shadow: var(--card-shadow);
 }

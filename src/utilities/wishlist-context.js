@@ -3,19 +3,19 @@ import { wishlistFun } from "./wishlistFun";
 
 const WishlistContext = createContext();
 
-const WishlistProvider =({children}) =>{
-    const [wishlistState, wishlistDispatch] = useReducer(wishlistFun, {
-        msg: "",
-        quantity:0,
-        items:[]
-    });
+const WishlistProvider = ({ children }) => {
+  const [wishlistState, wishlistDispatch] = useReducer(wishlistFun, {
+    msg: "",
+    quantity: 0,
+    items: [],
+  });
 
-    return(
-        <WishlistContext.Provider value={{wishlistState, wishlistDispatch}}>
-            {children}
-        </WishlistContext.Provider>
-    )
-}
+  return (
+    <WishlistContext.Provider value={{ wishlistState, wishlistDispatch }}>
+      {children}
+    </WishlistContext.Provider>
+  );
+};
 
 const useWishlist = () => useContext(WishlistContext);
-export {useWishlist, WishlistProvider}
+export { useWishlist, WishlistProvider };

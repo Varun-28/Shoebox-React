@@ -4,8 +4,8 @@ import { useCart } from "../utilities/cart-context";
 import { useWishlist } from "../utilities/wishlist-context";
 
 function CartCard() {
-  const {cartState, cartDispatch} = useCart();
-  const {wishlistDispatch} = useWishlist();
+  const { cartState, cartDispatch } = useCart();
+  const { wishlistDispatch } = useWishlist();
 
   function wishlistHandler(item) {
     wishlistDispatch({
@@ -32,15 +32,15 @@ function CartCard() {
             <p className="text-base">{item.title}</p>
             <p className="text-md my-2">Rs. {item.price}</p>
             <div className="product-quantity flex justify-center items-center gap-x-4 my-4">
-              <button
+              <button className="btn-quantity"
                 onClick={() =>
                   cartDispatch({ type: "DECREASE-COUNT", payload: item._id })
                 }
               >
                 -
               </button>
-              <p>{item.prodQty}</p>
-              <button
+              <p  className="text-quantity">{item.prodQty}</p>
+              <button  className="btn-quantity"
                 onClick={() =>
                   cartDispatch({ type: "INCREASE-COUNT", payload: item._id })
                 }
@@ -57,7 +57,10 @@ function CartCard() {
               >
                 Remove
               </button>
-              <button className="card-btn-icon" onClick={() => wishlistHandler(item)}>
+              <button
+                className="card-btn-icon"
+                onClick={() => wishlistHandler(item)}
+              >
                 <i className="far fa-heart"></i>
               </button>
             </div>

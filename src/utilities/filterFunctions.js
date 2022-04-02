@@ -1,12 +1,16 @@
 export function sortFun(state, products) {
-    const sortedProducts = products.sort((a, b) => Number(a["price"]) - Number(b["price"]));
-    if (state.sorting === "low") return sortedProducts;
-    if (state.sorting === "high") return sortedProducts.reverse();
-    return products;
+  const sortedProducts = products.sort(
+    (a, b) => Number(a["price"]) - Number(b["price"])
+  );
+  if (state.sorting === "low") return sortedProducts;
+  if (state.sorting === "high") return sortedProducts.reverse();
+  return products;
 }
-  
+
 export function stockFun(state, products) {
-    return state.inStock ? products.filter((product) => product.inStock) : products;
+  return state.inStock
+    ? products.filter((product) => product.inStock)
+    : products;
 }
 
 export function fastDeliveryFun(state, products) {
@@ -23,8 +27,7 @@ export function ratingFun(state, products) {
 
 export function priceRangeFun(state, products) {
   return products.filter(
-    (product) =>
-      Number(product.price) <= Number(state.priceRange)
+    (product) => Number(product.price) <= Number(state.priceRange)
   );
 }
 

@@ -24,7 +24,7 @@ function Wishlist() {
     wishlistDispatch({
       type: "REMOVE-FROM-WISHLIST",
       payload: item._id,
-    })
+    });
   }
 
   return (

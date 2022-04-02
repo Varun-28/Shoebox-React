@@ -1,30 +1,28 @@
-import React from 'react';
-import { BillingDetail } from '../../components/BillingDetail';
-import { CartCard } from '../../components/CartCard';
-import { Empty } from '../../components/Empty';
-import { useCart } from '../../utilities/cart-context';
+import React from "react";
+import { BillingDetail } from "../../components/BillingDetail";
+import { CartCard } from "../../components/CartCard";
+import { Empty } from "../../components/Empty";
+import { useCart } from "../../utilities/cart-context";
 import "./cart.css";
 
-
 function Cart() {
-
-  const {cartState} = useCart();
+  const { cartState } = useCart();
 
   return (
-    <div className='cart-container'>
+    <div className="cart-container">
       <h3>Cart</h3>
       <div>
-        {
-          cartState.quantity === 0
-          ? <Empty emptyText="Cart" />
-          : <div className='cart-component flex flex-col gap-y-8 my-8'>
+        {cartState.quantity === 0 ? (
+          <Empty emptyText="Cart" />
+        ) : (
+          <div className="cart-component flex flex-col gap-y-8 my-8">
             <BillingDetail />
             <CartCard />
           </div>
-        }
+        )}
       </div>
     </div>
-  )
+  );
 }
 
-export {Cart};
+export { Cart };

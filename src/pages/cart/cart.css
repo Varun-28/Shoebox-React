@@ -1,16 +1,16 @@
 @import url('../../stylesheets/styles.css');
 
-.cart-container{
+.cart-container {
     text-align: center;
 }
 
-.bill-container{
+.bill-container {
     box-shadow: var(--card-shadow);
     height: fit-content;
     width: 25rem;
 }
 
-.gray-hr-line{
+.gray-hr-line {
     display: block;
     width: 100%;
     margin: 1rem auto;
@@ -18,18 +18,18 @@
     border-radius: 5px;
 }
 
-.price-info{
+.price-info {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.cart-card{
+.cart-card {
     box-shadow: var(--card-shadow);
     border-radius: 5px;
 }
 
-.product-quantity button{
+.product-quantity .btn-quantity {
     background-color: var(--cta-color);
     border: none;
     border-radius: 50%;
@@ -38,18 +38,19 @@
     cursor: pointer;
 }
 
-.product-quantity p {
+.product-quantity .text-quantity {
     border: solid 2px var(--primary-color);
     padding: 4px;
     border-radius: 2px;
 }
 
 @media only screen and (min-width: 800px) {
-    .cart-component{
+    .cart-component {
         flex-direction: row;
         justify-content: space-evenly;
     }
-    .bill-container{
+
+    .bill-container {
         margin: 0;
     }
 }

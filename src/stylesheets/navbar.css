@@ -35,7 +35,7 @@
     align-items: center;
 }
 
-.nav-links li {
+.nav-links .nav-items {
     cursor: pointer;
     margin-right: 2rem;
 }
