@@ -13,7 +13,6 @@ An ecommerce website that offers various categories shoes👟 both for male🚹 
 🎯It is fully responsive in nature and fulfills varoius accessibilities parameters. <br />
 🎯Made with **_React JS_** library
 
- <br />
  
 ## Functionalities :
 ✅ View Home page from where users can go to all other pages <br />
@@ -24,6 +23,8 @@ An ecommerce website that offers various categories shoes👟 both for male🚹 
 ✅ View products in cart and move product to wishlist from cart <br />
 ✅ Remove product from cart and wishlist <br />
 ✅ See Total Bill Amount On the Cart Page <br />
+
+<br />
 
 ![Screenshot 2022-04-02 at 11-21-38 The Shoebox](https://user-images.githubusercontent.com/56184699/161369062-53be75ed-843c-4f42-b0b2-46262d25e04d.png)
 
