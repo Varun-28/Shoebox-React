@@ -4,6 +4,7 @@ import { Home, Product, Login, Signup, Cart, Wishlist } from "./pages/pages";
 import { Navbar, Footer } from "./components/Components.jsx";
 import Mockman from "mockman-js";
 import { NotFound } from "./components/NotFound";
+import { ProductDetail } from "./pages/productDetail/ProductDetail";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
+          <Route path="/product/:productId" element={<ProductDetail />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/cart" element={<Cart />} />

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../utilities/cart-context";
 import { useWishlist } from "../utilities/wishlist-context";
 
@@ -23,7 +24,7 @@ function Card({ _id, brand, title, price, rating, prodImage, inStock }) {
     <div className="card card-vertical badged-card">
       <div className="card-head">
         <div className="card-img">
-          <img src={prodImage} alt="card" />
+          <Link to={`/product/${_id}`}><img src={prodImage} alt="card" /></Link>
         </div>
         <div className="card-texts">
           <h4 className="card-title">
