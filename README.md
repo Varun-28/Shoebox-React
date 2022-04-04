@@ -4,7 +4,8 @@ An ecommerce website that offers various categories shoes👟 both for male🚹 
 
 ## Pages : 
 🏠 Home page <br />
-👟 Product page <br />
+📃 Products Listing page <br />
+👟 Product Detail page <br />
 🛍️ Cart <br />
 💖 Wishlist <br /> 
 🔐 Login page <br />
@@ -18,6 +19,7 @@ An ecommerce website that offers various categories shoes👟 both for male🚹 
 ✅ View Home page from where users can go to all other pages <br />
 ✅ Visit specific category of product from home page <br />
 ✅ Apply all kind of filters in the product listing page <br />
+✅ Click on any product in the product listing page will redirect to product detail page <br />
 ✅ Add product to cart and wishlist from product listing page <br />
 ✅ View products in wishlist and move product from wishlist to cart <br />
 ✅ View products in cart and move product to wishlist from cart <br />
@@ -33,3 +35,6 @@ An ecommerce website that offers various categories shoes👟 both for male🚹 
 ![Screenshot 2022-04-02 at 11-22-33 The Shoebox](https://user-images.githubusercontent.com/56184699/161369069-2dcbe7b6-e6fc-4cdf-92f4-b6f9ba32516a.png)
 
 ![Screenshot 2022-04-02 at 11-22-44 The Shoebox](https://user-images.githubusercontent.com/56184699/161369071-abdab2b8-039e-4a2a-9dd2-3f32e27c9800.png)
+
+![Screenshot 2022-04-04 at 23-24-02 The Shoebox](https://user-images.githubusercontent.com/56184699/161603179-ddebcd21-2f71-4fb4-9ede-bc2f71a2e7ec.png)
+
