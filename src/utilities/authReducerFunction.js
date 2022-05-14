@@ -21,7 +21,7 @@ export function authReducerFunction(authState, action) {
       return {
         ...authState,
         email: "adarshbalika@gmail.com",
-        password: "adarshBalika123",
+        password: "adarshbalika",
       };
     case "LOCAL-STORAGE":
       return {
