@@ -25,6 +25,11 @@
 
 .input-container {
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    margin: 1.6rem auto;
+    width: 80%;
 }
 
 .input-container .input-field {
@@ -33,6 +38,25 @@
     padding: 5px;
     font-size: 1.2rem;
 }
+
+.password-label{
+    position: relative;
+}
+
+.eye-btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    color: var(--primary-color);
+    background: transparent;
+    border: none;
+}
+
+.error-text{
+    color: #E83A14;
+}
+
 
 @media only screen and (min-width: 800px) {
     .pattern-bg {

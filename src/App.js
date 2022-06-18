@@ -1,7 +1,12 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { Home, Product, Login, Signup, Cart, Wishlist } from "./pages/pages";
-import { Navbar, Footer } from "./components/Components.jsx";
+import {
+  Navbar,
+  Footer,
+  RequiresAuth,
+  PrivateAuth,
+} from "./components/Components.jsx";
 import Mockman from "mockman-js";
 import { NotFound } from "./components/NotFound";
 import { ProductDetail } from "./pages/productDetail/ProductDetail";
@@ -17,10 +22,38 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product" element={<Product />} />
           <Route path="/product/:productId" element={<ProductDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/wishlist" element={<Wishlist />} />
+          <Route
+            path="/login"
+            element={
+              <PrivateAuth>
+                <Login />
+              </PrivateAuth>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <PrivateAuth>
+                <Signup />
+              </PrivateAuth>
+            }
+          />
+          <Route
+            path="/cart"
+            element={
+              <RequiresAuth>
+                <Cart />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <RequiresAuth>
+                <Wishlist />
+              </RequiresAuth>
+            }
+          />
           <Route path="*" element={<NotFound />} />
           <Route path="/mock" element={<Mockman />} />
         </Routes>

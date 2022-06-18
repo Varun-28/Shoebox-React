@@ -4,10 +4,14 @@ import { Link } from "react-router-dom";
 import "../stylesheets/navbar.css";
 import { useWishlist } from "../utilities/wishlist-context";
 import { useCart } from "../utilities/cart-context";
+import { useAuthFunctions } from "../utilities/useAuthFunctions.js";
 
 export function Navbar() {
   const { wishlistState } = useWishlist();
   const { cartState } = useCart();
+  const token = localStorage.getItem("userToken");
+  const { logout } = useAuthFunctions();
+
   return (
     <header className="shoebox-navbar">
       <nav>
@@ -28,9 +32,22 @@ export function Navbar() {
         </div>
         <ul className="nav-links">
           <li className="nav-items">
-            <Link to="/login">
-              <button className="btn btn-outline">Sign-in</button>
-            </Link>
+            {!token ? (
+              <Link to="/login" className="mx-4">
+                <button
+                  className="btn btn-outline"
+                >
+                  Login
+                </button>
+              </Link>
+            ) : (
+              <button
+                onClick={logout}
+                className="btn btn-outline"
+              >
+                Logout
+              </button>
+            )}
           </li>
           <li className="nav-items">
             <Link to="/wishlist">
