@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { useCart } from "../utilities/cart-context";
+import { useCart } from "../context/cartContext/cart-context";
 import "../pages/cart/cart.css";
 
 function BillingDetail() {

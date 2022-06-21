@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useCart } from "../../utilities/cart-context";
-import { useProduct } from "../../utilities/product-context";
-import { useWishlist } from "../../utilities/wishlist-context";
+import { useCart } from "../../context/cartContext/cart-context.js";
+import { useProduct } from "../../context/productContext/product-context.js";
+import { useWishlist } from "../../context/wishlistContext/wishlist-context.js";
 import "./productDetail.css";
 
 function ProductDetail() {

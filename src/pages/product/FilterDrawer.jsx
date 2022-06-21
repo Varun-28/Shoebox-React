@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import { useProduct } from "../../utilities/product-context";
+import { useProduct } from "../../context/productContext/product-context.js";
 import "./product.css";
 
 function FilterDrawer({ drawerVisibility }) {

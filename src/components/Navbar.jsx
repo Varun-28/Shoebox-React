@@ -2,9 +2,9 @@ import React from "react";
 import Logo from "../assets/logo_svg.svg";
 import { Link } from "react-router-dom";
 import "../stylesheets/navbar.css";
-import { useWishlist } from "../utilities/wishlist-context";
-import { useCart } from "../utilities/cart-context";
-import { useAuthFunctions } from "../utilities/useAuthFunctions.js";
+import { useWishlist } from "../context/wishlistContext/wishlist-context";
+import { useCart } from "../context/cartContext/cart-context";
+import { useAuthFunctions } from "../context/authContext/useAuthFunctions.js";
 
 export function Navbar() {
   const { wishlistState } = useWishlist();

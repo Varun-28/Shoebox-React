@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useCart } from "../utilities/cart-context";
-import { useWishlist } from "../utilities/wishlist-context";
+import { useCart } from "../context/cartContext/cart-context";
+import { useWishlist } from "../context/wishlistContext/wishlist-context";
 
 function Card({ _id, brand, title, price, rating, prodImage, inStock }) {
   const { wishlistDispatch } = useWishlist();

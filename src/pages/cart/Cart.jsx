@@ -2,7 +2,7 @@ import React from "react";
 import { BillingDetail } from "../../components/BillingDetail";
 import { CartCard } from "../../components/CartCard";
 import { Empty } from "../../components/Empty";
-import { useCart } from "../../utilities/cart-context";
+import { useCart } from "../../context/cartContext/cart-context.js";
 import "./cart.css";
 
 function Cart() {

@@ -1,7 +1,7 @@
 import { React, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../utilities/auth-context";
-import { useAuthFunctions } from "../../utilities/useAuthFunctions.js";
+import { useAuth } from "../../context/authContext/auth-context.js";
+import { useAuthFunctions } from "../../context/authContext/useAuthFunctions.js";
 import { Loading } from "../../components/Components";
 import "../../stylesheets/login-signup.css";
 

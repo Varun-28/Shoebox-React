@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useProduct } from "../utilities/product-context";
+import { useProduct } from "../context/productContext/product-context";
 import "../pages/home/home.css";
 
 function CategoryCards({ categoryImage, categoryName, categoryValue }) {

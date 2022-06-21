@@ -1,7 +1,7 @@
 import { React } from "react";
 import "./product.css";
 import { Card } from "../../components/Card";
-import { useProduct } from "../../utilities/product-context";
+import { useProduct } from "../../context/productContext/product-context.js";
 
 function FilterProducts({ drawerVisibility, setDrawerVisibility }) {
   const { filteredProducts } = useProduct();
