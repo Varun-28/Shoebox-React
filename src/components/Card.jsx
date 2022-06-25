@@ -1,30 +1,42 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useCart } from "../context/cartContext/cart-context";
-import { useWishlist } from "../context/wishlistContext/wishlist-context";
+import { Link, useNavigate } from "react-router-dom";
+import { useAlert } from "react-alert";
+import { useCartServerCalls } from "../context/cartContext/useCartServerCalls";
+import { useWishlistServerCalls } from "../context/wishlistContext/useWishlistServerCalls";
 
-function Card({ _id, brand, title, price, rating, prodImage, inStock }) {
-  const { wishlistDispatch } = useWishlist();
+function Card({ product }) {
+  const navigate = useNavigate();
+  const alert = useAlert();
+  const { _id, brand, title, price, rating, prodImage, inStock } = product;
+  const { addToWishlist } = useWishlistServerCalls();
   function wishlistHandler() {
-    wishlistDispatch({
-      type: "ADD-TO-WISHLIST",
-      payload: { brand, _id, price, title, rating, prodImage },
-    });
+    const token = localStorage.getItem("ecommToken");
+    if (token) {
+      addToWishlist({...product});
+    } else {
+      navigate("/login");
+      alert.show("Please Login First!", { type: "info" });
+    }
   }
 
-  const { cartDispatch } = useCart();
+  const { addToCart } = useCartServerCalls();
   function cartHandler() {
-    cartDispatch({
-      type: "ADD-TO-CART",
-      payload: { brand, _id, price, title, rating, prodImage, prodQty: 1 },
-    });
+    const token = localStorage.getItem("ecommToken");
+    if (token) {
+      addToCart({...product});
+    } else {
+      navigate("/login");
+      alert.show("Please Login First!", { type: "info" });
+    }
   }
 
   return (
     <div className="card card-vertical badged-card">
       <div className="card-head">
         <div className="card-img">
-          <Link to={`/product/${_id}`}><img src={prodImage} alt="card" /></Link>
+          <Link to={`/product/${_id}`}>
+            <img src={prodImage} alt="card" />
+          </Link>
         </div>
         <div className="card-texts">
           <h4 className="card-title">

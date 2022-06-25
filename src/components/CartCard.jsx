@@ -1,25 +1,18 @@
 import React from "react";
 import "../pages/cart/cart.css";
 import { useCart } from "../context/cartContext/cart-context";
-import { useWishlist } from "../context/wishlistContext/wishlist-context";
+import { useCartServerCalls } from "../context/cartContext/useCartServerCalls";
+import { useWishlistServerCalls } from "../context/wishlistContext/useWishlistServerCalls";
 
 function CartCard() {
-  const { cartState, cartDispatch } = useCart();
-  const { wishlistDispatch } = useWishlist();
+  const { cartState } = useCart();
+  const { deleteFromCart, increaseQuantity, decreaseQuantity } =
+    useCartServerCalls();
+  const { addToWishlist } = useWishlistServerCalls();
 
   function wishlistHandler(item) {
-    wishlistDispatch({
-      type: "ADD-TO-WISHLIST",
-      payload: {
-        item: item.brand,
-        _id: item._id,
-        price: item.price,
-        title: item.title,
-        rating: item.rating,
-        prodImage: item.prodImage,
-      },
-    });
-    cartDispatch({ type: "REMOVE-FROM-CART", payload: item._id });
+    addToWishlist({ ...item });
+    deleteFromCart(item._id);
   }
 
   return (
@@ -32,18 +25,16 @@ function CartCard() {
             <p className="text-base">{item.title}</p>
             <p className="text-md my-2">Rs. {item.price}</p>
             <div className="product-quantity flex justify-center items-center gap-x-4 my-4">
-              <button className="btn-quantity"
-                onClick={() =>
-                  cartDispatch({ type: "DECREASE-COUNT", payload: item._id })
-                }
+              <button
+                className="btn-quantity"
+                onClick={() => decreaseQuantity(item._id)}
               >
                 -
               </button>
-              <p  className="text-quantity">{item.prodQty}</p>
-              <button  className="btn-quantity"
-                onClick={() =>
-                  cartDispatch({ type: "INCREASE-COUNT", payload: item._id })
-                }
+              <p className="text-quantity">{item.qty}</p>
+              <button
+                className="btn-quantity"
+                onClick={() => increaseQuantity(item._id)}
               >
                 +
               </button>
@@ -51,9 +42,7 @@ function CartCard() {
             <div className="card-buttons flex items-center justify-between gap-x-4">
               <button
                 className="btn btn-danger"
-                onClick={() =>
-                  cartDispatch({ type: "REMOVE-FROM-CART", payload: item._id })
-                }
+                onClick={() => deleteFromCart(item._id)}
               >
                 Remove
               </button>

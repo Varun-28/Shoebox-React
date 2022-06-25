@@ -13,7 +13,7 @@ function BillingDetail() {
   useEffect(() => {
     if (cartState.items.length !== 0) {
       const priceSum = cartState.items.reduce(
-        (prev, curr) => prev + Number(curr.price) * Number(curr.prodQty),
+        (prev, curr) => prev + Number(curr.price) * Number(curr.qty),
         0
       );
       setPrice((val) => ({

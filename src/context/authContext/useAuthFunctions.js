@@ -20,7 +20,7 @@ function useAuthFunctions() {
       const { encodedToken } = data;
       if (status === 200) {
         alert.show("Login Success", { type: "success" });
-        localStorage.setItem("userToken", encodedToken);
+        localStorage.setItem("ecommToken", encodedToken);
         authDispatch({
           type: "USER-DATA",
           payload: { encodedToken },
@@ -62,7 +62,7 @@ function useAuthFunctions() {
       });
       const { encodedToken } = data;
       if (status === 201) {
-        localStorage.setItem("userToken", encodedToken);
+        localStorage.setItem("ecommToken", encodedToken);
         authDispatch({
           type: "USER-DATA",
           payload: { encodedToken },

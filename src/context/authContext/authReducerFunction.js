@@ -20,13 +20,13 @@ export function authReducerFunction(authState, action) {
     case "TEST-CREDENTIALS":
       return {
         ...authState,
-        email: "adarshbalika@gmail.com",
-        password: "adarshbalika",
+        email: "verma.varun2810@gmail.com",
+        password: "varunVerma123",
       };
     case "LOCAL-STORAGE":
       return {
         ...authState,
-        encodedToken: localStorage.getItem("userToken"),
+        encodedToken: localStorage.getItem("ecommToken"),
       };
     default:
       return authState;

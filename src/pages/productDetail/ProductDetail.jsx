@@ -1,27 +1,21 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useCart } from "../../context/cartContext/cart-context.js";
+import { useCartServerCalls } from "../../context/cartContext/useCartServerCalls.js";
 import { useProduct } from "../../context/productContext/product-context.js";
-import { useWishlist } from "../../context/wishlistContext/wishlist-context.js";
+import { useWishlistServerCalls } from "../../context/wishlistContext/useWishlistServerCalls.js";
 import "./productDetail.css";
 
 function ProductDetail() {
   const { productId } = useParams();
   const { filteredProducts } = useProduct();
-  const { wishlistDispatch } = useWishlist();
-  const { cartDispatch } = useCart();
+  const { addToWishlist } = useWishlistServerCalls();
+  const { addToCart } = useCartServerCalls();
 
   const getProduct = () => {
     return filteredProducts.find((prod) => prod._id === productId);
   };
-  const {
-    _id,
-    brand,
-    title,
-    price,
-    rating,
-    prodImage
-  } = getProduct();
+  const product = getProduct();
+  const { brand, title, price, rating, prodImage } = product;
 
   return (
     <div className="product-details flex flex-col justify-center items-center my-8">
@@ -33,31 +27,13 @@ function ProductDetail() {
         <p>Rs. {price}</p>
         <button
           className="btn btn-primary"
-          onClick={() =>
-            cartDispatch({
-              type: "ADD-TO-CART",
-              payload: {
-                brand,
-                _id,
-                price,
-                title,
-                rating,
-                prodImage,
-                prodQty: 1,
-              },
-            })
-          }
+          onClick={() => addToCart({ ...product })}
         >
           Add to Cart
         </button>
         <button
           className="btn btn-outline"
-          onClick={() =>
-            wishlistDispatch({
-              type: "ADD-TO-WISHLIST",
-              payload: { brand, _id, price, title, rating, prodImage },
-            })
-          }
+          onClick={() => addToWishlist({ ...product })}
         >
           Add to Wishlist
         </button>
