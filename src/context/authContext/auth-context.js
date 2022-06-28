@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   useEffect(() => {
-    if (localStorage.getItem("userToken")) {
+    if (localStorage.getItem("ecommToken")) {
       authDispatch({ type: "LOCAL-STORAGE" });
     }
   }, []);

@@ -9,7 +9,7 @@ import { useAuthFunctions } from "../context/authContext/useAuthFunctions.js";
 export function Navbar() {
   const { wishlistState } = useWishlist();
   const { cartState } = useCart();
-  const token = localStorage.getItem("userToken");
+  const token = localStorage.getItem("ecommToken");
   const { logout } = useAuthFunctions();
 
   return (

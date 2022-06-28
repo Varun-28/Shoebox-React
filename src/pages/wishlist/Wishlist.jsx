@@ -1,30 +1,18 @@
 import React from "react";
 import { Empty } from "../../components/Empty";
-import { useCart } from "../../context/cartContext/cart-context.js";
+import { useCartServerCalls } from "../../context/cartContext/useCartServerCalls";
+import { useWishlistServerCalls } from "../../context/wishlistContext/useWishlistServerCalls";
 import { useWishlist } from "../../context/wishlistContext/wishlist-context.js";
 import "./wishlist.css";
 
 function Wishlist() {
-  const { wishlistState, wishlistDispatch } = useWishlist();
+  const { wishlistState } = useWishlist();
+  const { deleteFromWishlist } = useWishlistServerCalls();
+  const { addToCart } = useCartServerCalls();
 
-  const { cartDispatch } = useCart();
   function cartHandler(item) {
-    cartDispatch({
-      type: "ADD-TO-CART",
-      payload: {
-        brand: item.brand,
-        _id: item._id,
-        price: item.price,
-        title: item.title,
-        rating: item.rating,
-        prodImage: item.prodImage,
-        prodQty: 1,
-      },
-    });
-    wishlistDispatch({
-      type: "REMOVE-FROM-WISHLIST",
-      payload: item._id,
-    });
+    addToCart({ ...item });
+    deleteFromWishlist(item._id);
   }
 
   return (
@@ -58,12 +46,7 @@ function Wishlist() {
               </div>
               <button
                 className="card-exit-btn"
-                onClick={() =>
-                  wishlistDispatch({
-                    type: "REMOVE-FROM-WISHLIST",
-                    payload: item._id,
-                  })
-                }
+                onClick={() => deleteFromWishlist(item._id)}
               >
                 <i className="fas fa-times"></i>
               </button>

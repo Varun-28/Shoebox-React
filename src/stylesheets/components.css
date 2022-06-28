@@ -15,6 +15,7 @@
     background-color: rgba(0, 0, 0, 0.6);
     display: grid;
     place-items: center;
+    z-index: 10;
 }
 
 .loader-spinner {
