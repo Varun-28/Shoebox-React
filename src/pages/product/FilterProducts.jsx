@@ -2,9 +2,16 @@ import { React } from "react";
 import "./product.css";
 import { Card } from "../../components/Card";
 import { useProduct } from "../../context/productContext/product-context.js";
+import { Loading } from "../../components/Loading";
 
-function FilterProducts({ drawerVisibility, setDrawerVisibility }) {
+function FilterProducts({ search, drawerVisibility, setDrawerVisibility }) {
   const { filteredProducts } = useProduct();
+  const searchedProducts = filteredProducts.filter(
+    (product) =>
+      product.title.toLowerCase().includes(search.toLowerCase()) ||
+      product.brand.toLowerCase().includes(search.toLowerCase()) ||
+      product.categoryName.toLowerCase().includes(search.toLowerCase())
+  );
 
   return (
     <section className="product-section">
@@ -27,10 +34,14 @@ function FilterProducts({ drawerVisibility, setDrawerVisibility }) {
       <h3 className="px-8 py-4">Products({filteredProducts.length})</h3>
 
       <div className="product-cards">
-        {filteredProducts.length === 0 ? (
-          <p>Loading Products ...</p>
+        {filteredProducts.length === 0 && searchedProducts.length === 0 ? (
+          <Loading />
+        ) : searchedProducts.length === 0 ? (
+          <p className="text-center mt-2 text-lg">No Results Found! 😵</p>
         ) : (
-          filteredProducts.map((product) => <Card product={product} key={product._id} />)
+          searchedProducts.map((product) => (
+            <Card product={product} key={product._id} />
+          ))
         )}
       </div>
     </section>
