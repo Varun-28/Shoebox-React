@@ -48,7 +48,7 @@ function useWishlistServerCalls() {
         alert.show("Added To Wishlist", { type: "success" });
       }
     } catch (err) {
-      alert.show("Server Error: Cannot be Added!", { type: "error" });
+      alert.show("Error: Can't add to Wishlist", { type: "error" });
     }
   };
 
@@ -61,8 +61,9 @@ function useWishlistServerCalls() {
         type: "REMOVE-FROM-WISHLIST",
         payload: response.data.wishlist,
       });
+      alert.show("Removed from Wishlist", { type: "success" });
     } catch (err) {
-      alert.show("Server Error: Cannot be removed!", { type: "error" });
+      alert.show("Error: Can't remove from Wishlist", { type: "error" });
     }
   };
   return { addToWishlist, deleteFromWishlist };

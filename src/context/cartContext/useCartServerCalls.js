@@ -48,7 +48,7 @@ function useCartServerCalls() {
         alert.show("Added To Cart", { type: "success" });
       }
     } catch (err) {
-      alert.show("Server Error: Cannot be Added!", { type: "error" });
+      alert.show("Error: Can't add to Cart", { type: "error" });
     }
   };
 
@@ -61,8 +61,9 @@ function useCartServerCalls() {
         type: "REMOVE-FROM-CART",
         payload: response.data.cart,
       });
+      alert.show("Remove from Cart", { type: "success" });
     } catch (err) {
-      alert.show("Server Error: Cannot be removed!", { type: "error" });
+      alert.show("Error: Can't remove from Cart", { type: "error" });
     }
   };
 
@@ -78,7 +79,7 @@ function useCartServerCalls() {
         payload: response.data.cart,
       });
     } catch (err) {
-      alert.show("Server Error: Can't increase quantity!", { type: "error" });
+      alert.show("Error: Can't increase quantity!", { type: "error" });
     }
   };
 
@@ -94,7 +95,7 @@ function useCartServerCalls() {
         payload: response.data.cart,
       });
     } catch (err) {
-      alert.show("Server Error: Can't decrease quantity!", { type: "error" });
+      alert.show("Error: Can't decrease quantity!", { type: "error" });
     }
   };
   return { addToCart, deleteFromCart, increaseQuantity, decreaseQuantity };

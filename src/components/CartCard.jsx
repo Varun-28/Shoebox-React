@@ -28,6 +28,7 @@ function CartCard() {
               <button
                 className="btn-quantity"
                 onClick={() => decreaseQuantity(item._id)}
+                disabled={item.qty === 1}
               >
                 -
               </button>
