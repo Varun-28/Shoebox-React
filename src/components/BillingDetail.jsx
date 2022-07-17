@@ -1,8 +1,10 @@
 import { React, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/cartContext/cart-context";
 import "../pages/cart/cart.css";
 
 function BillingDetail() {
+  const navigate = useNavigate();
   const { cartState } = useCart();
   const [price, setPrice] = useState({
     totalPrice: 0,
@@ -44,7 +46,9 @@ function BillingDetail() {
         <h4>Rs. {price.totalPrice}</h4>
       </div>
       <span className="gray-hr-line"></span>
-      <button className="btn btn-primary">Place Order</button>
+      <button className="btn btn-primary" onClick={() => navigate("/checkout")}>
+        Checkout
+      </button>
     </div>
   );
 }

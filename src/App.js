@@ -1,7 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home, Product, Login, Signup, Cart, Wishlist } from "./pages/pages";
+import { Home, Product, Login, Signup, Cart, Wishlist, Checkout } from "./pages/pages";
 import {
   Navbar,
   Footer,
@@ -54,6 +54,14 @@ function App() {
             element={
               <RequiresAuth>
                 <Wishlist />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <RequiresAuth>
+                <Checkout />
               </RequiresAuth>
             }
           />
