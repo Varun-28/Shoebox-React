@@ -56,7 +56,7 @@ function AddressForm({ setShowForm, isEditing, setIsEditing }) {
       <div className="form-modal p-8 rounded w-4/5 md:w-2/5">
         <h4 className="text-center">Address Form</h4>
         <form onSubmit={addTaskHandler} className="flex flex-col gap-y-4">
-          <div className="input-container">
+          <div className="address-input-container">
             <div className="input-group">
               <label htmlFor="full-name">Full Name</label>
               <input

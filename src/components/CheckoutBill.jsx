@@ -80,7 +80,18 @@ function CheckoutBill({ selectedAddress }) {
 
   return (
     <div className="bill-container p-4 border-2 mx-auto">
-      <h4>Price Details</h4>
+      <h4>Order Summary</h4>
+      <span className="gray-hr-line"></span>
+      <div className="w-100p">
+        {cartState.items.length !== 0 &&
+          cartState.items.map((item) => (
+            <div key={item._id} className="mb-4 cart-item-wrapper">
+              <p className="font-semibold">{item.brand}</p>
+              <p className="text-base">{item.title}</p>
+              <p className="font-md"><span className="gray-text">Price:</span> {item.price} x {item.qty}</p>
+            </div>
+          ))}
+      </div>
       <span className="gray-hr-line"></span>
       <div className="price-info">
         <p>Price</p>

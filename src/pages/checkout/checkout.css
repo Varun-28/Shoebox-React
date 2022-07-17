@@ -8,6 +8,10 @@
     margin: 1.2rem;
 }
 
+.cart-item-wrapper{
+    border-bottom: solid 1px var(--hover-color);
+}
+
 /* address form css */
 
 .modal-form-container {
@@ -24,12 +28,12 @@
 
 .form-modal {
     width: 80%;
-    min-height: 80vh;
+    /* min-height: 80vh; */
     position: relative;
     background-color: var(--base-color);
 }
 
-.input-container {
+.address-input-container {
     display: grid;
     grid-template-columns: 50% 50%;
     width: 100%;
@@ -150,7 +154,7 @@ input[type=number] {
     .checkout-container {
         grid-template-columns: 100%;
     }
-    .input-container {
+    .address-input-container {
         grid-template-columns: 100%;
     }
 }
