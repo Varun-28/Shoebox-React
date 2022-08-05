@@ -105,15 +105,17 @@ input[type=number] {
 /* address list css */
 
 .address-item{
-    border: solid 2px var(--hover-color);
-    padding: 4px;
+    display: flex;
+    align-items: flex-start;
+    border: solid 2px lightgray;
     border-radius: 4px;
-    transition: transform ease-in-out 0.2s;
-    margin: 4px auto;
+    margin-bottom: 8px;
+    padding: 4px;
 }
 
-.address-item:hover{
-    transform: translateX(10px);
+.address-content{
+    width: 100%;
+    padding: 0 1rem;
 }
 
 .phone{
@@ -158,146 +160,3 @@ input[type=number] {
         grid-template-columns: 100%;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .task-container { */
-/* margin: 1.2rem auto;
-    height: 65vh;
-    position: relative;
-    overflow-y: scroll; */
-/* -ms-overflow-style: none; */
-/* IE and Edge */
-/* scrollbar-width: none; */
-/* Firefox */
-/* } */
-
-/* .task-container::-webkit-scrollbar {
-    display: none;
-}
-
-.task-list-header {
-    position: sticky;
-    top: 0px;
-    background-color: var(--white-color);
-}
-
-.task-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px;
-    margin-bottom: 1.2rem;
-    color: var(--primary-color);
-    box-shadow: 0 0 2px 1px var(--primary-color);
-}
-
-.task-item-btns {
-    display: flex;
-    column-gap: 1.2rem;
-    margin: auto 1.2rem;
-}
-
-.fa-pen-to-square {
-    color: var(--secondary-color);
-}
-
-.fa-trash-can {
-    color: var(--hover-color)
-}
-
-
-.add-input, .add-btn {
-    border: solid 2px var(--primary-color);
-    padding: 4px;
-    border-radius: 4px;
-}
-
-textarea.add-input {
-    min-height: 20vh;
-}
-
-.add-btn {
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    width: 5rem;
-}
-
-
-
-.home-btn{
-    position: absolute;
-    top: 4vh;
-    right: 4vh;
-    width: 2em;
-    height: 2em;
-    background-color: var(--primary-color);
-    color: var(--bg-color);
-    border-radius: 50%;
-    border: none;
-    transition: 0.2s ease-in-out;
-}
-
-.home-btn:hover{
-    box-shadow: 4px 4px 8px -2px var(--primary-color);
-}
-
-.tags-section {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
-  
-  .tag {
-    background-color: lightgrey;
-    padding: 4px 8px;
-    border-radius: 1rem;
-    display: flex;
-    align-items: center;
-  }
-
-  .tag-field{
-    margin-bottom: -12px;
-  }
-  
-  .tag-delete-btn {
-    background-color: white;
-    border: none;
-    border-radius: 50%;
-    margin-left: 4px;
-    padding: 4px;
-    width: 1.6rem;
-    height: 1.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  } */

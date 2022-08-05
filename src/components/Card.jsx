@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { useCartServerCalls } from "../context/cartContext/useCartServerCalls";
@@ -7,12 +7,13 @@ import { useWishlistServerCalls } from "../context/wishlistContext/useWishlistSe
 function Card({ product }) {
   const navigate = useNavigate();
   const alert = useAlert();
+  const [isLoading, setIsLoading] = useState(false);
   const { _id, brand, title, price, rating, prodImage, inStock } = product;
   const { addToWishlist } = useWishlistServerCalls();
   function wishlistHandler() {
     const token = localStorage.getItem("ecommToken");
     if (token) {
-      addToWishlist({...product});
+      addToWishlist({ ...product }, setIsLoading);
     } else {
       navigate("/login");
       alert.show("Please Login First!", { type: "info" });
@@ -23,7 +24,7 @@ function Card({ product }) {
   function cartHandler() {
     const token = localStorage.getItem("ecommToken");
     if (token) {
-      addToCart({...product});
+      addToCart({ ...product }, setIsLoading);
     } else {
       navigate("/login");
       alert.show("Please Login First!", { type: "info" });
@@ -50,10 +51,18 @@ function Card({ product }) {
         </div>
       </div>
       <div className="card-buttons">
-        <button className="card-btn-primary" onClick={cartHandler}>
+        <button
+          disabled={isLoading}
+          className="card-btn-primary"
+          onClick={cartHandler}
+        >
           Add To Cart
         </button>
-        <button className="card-btn-icon" onClick={wishlistHandler}>
+        <button
+          disabled={isLoading}
+          className="card-btn-icon"
+          onClick={wishlistHandler}
+        >
           <i className="far fa-heart"></i>
         </button>
       </div>

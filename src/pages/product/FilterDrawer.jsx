@@ -62,6 +62,7 @@ function FilterDrawer({ drawerVisibility }) {
           <li className="category-list-item">
             <label htmlFor="casual-m">
               <input
+                className="mr-2"
                 type="checkbox"
                 value="casual-m"
                 id="casual-m"
@@ -76,6 +77,7 @@ function FilterDrawer({ drawerVisibility }) {
           <li className="category-list-item">
             <label htmlFor="formal-m">
               <input
+                className="mr-2"
                 type="checkbox"
                 value="formal-m"
                 id="formal-m"
@@ -90,6 +92,7 @@ function FilterDrawer({ drawerVisibility }) {
           <li className="category-list-item">
             <label htmlFor="sport-m">
               <input
+                className="mr-2"
                 type="checkbox"
                 value="sport-m"
                 id="sport-m"
@@ -107,6 +110,7 @@ function FilterDrawer({ drawerVisibility }) {
           <li className="category-list-item">
             <label htmlFor="casual-f">
               <input
+                className="mr-2"
                 type="checkbox"
                 value="casual-f"
                 id="casual-f"
@@ -121,6 +125,7 @@ function FilterDrawer({ drawerVisibility }) {
           <li className="category-list-item">
             <label htmlFor="boot-f">
               <input
+                className="mr-2"
                 type="checkbox"
                 value="boot-f"
                 id="boot-f"
@@ -139,6 +144,7 @@ function FilterDrawer({ drawerVisibility }) {
         <h4 className="filter-heading">Rating</h4>
         <label htmlFor="four">
           <input
+            className="mr-2"
             type="radio"
             name="rating"
             value="4"
@@ -152,6 +158,7 @@ function FilterDrawer({ drawerVisibility }) {
         </label>
         <label htmlFor="three">
           <input
+            className="mr-2"
             type="radio"
             name="rating"
             value="3"
@@ -165,6 +172,7 @@ function FilterDrawer({ drawerVisibility }) {
         </label>
         <label htmlFor="two">
           <input
+            className="mr-2"
             type="radio"
             name="rating"
             value="2"
@@ -178,6 +186,7 @@ function FilterDrawer({ drawerVisibility }) {
         </label>
         <label htmlFor="one">
           <input
+            className="mr-2"
             type="radio"
             name="rating"
             value="1"
@@ -195,6 +204,7 @@ function FilterDrawer({ drawerVisibility }) {
         <h4 className="filter-heading">Sort by</h4>
         <label htmlFor="low">
           <input
+            className="mr-2"
             type="radio"
             name="price"
             value="l"
@@ -206,6 +216,7 @@ function FilterDrawer({ drawerVisibility }) {
         </label>
         <label htmlFor="high">
           <input
+            className="mr-2"
             type="radio"
             name="price"
             value="h"
@@ -223,6 +234,7 @@ function FilterDrawer({ drawerVisibility }) {
           <li>
             <label htmlFor="inStock">
               <input
+                className="mr-2"
                 type="checkbox"
                 value="inStock"
                 id="inStock"
@@ -235,6 +247,7 @@ function FilterDrawer({ drawerVisibility }) {
           <li>
             <label htmlFor="isFastDelivery">
               <input
+                className="mr-2"
                 type="checkbox"
                 value="isFastDelivery"
                 id="isFastDelivery"

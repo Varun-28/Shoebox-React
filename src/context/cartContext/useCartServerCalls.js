@@ -29,8 +29,9 @@ function useCartServerCalls() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
-  const addToCart = async (product) => {
+  const addToCart = async (product, setIsLoading) => {
     try {
+      setIsLoading(true);
       if (cartState.items.find((item) => item._id === product._id)) {
         alert.show("Already In Cart", { type: "info" });
       } else {
@@ -49,6 +50,8 @@ function useCartServerCalls() {
       }
     } catch (err) {
       alert.show("Error: Can't add to Cart", { type: "error" });
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -67,8 +70,9 @@ function useCartServerCalls() {
     }
   };
 
-  const increaseQuantity = async (productId) => {
+  const increaseQuantity = async (productId, setIsLoading) => {
     try {
+      setIsLoading(true);
       const response = await axios.post(
         `/api/user/cart/${productId}`,
         { action: { type: "increment" } },
@@ -80,11 +84,14 @@ function useCartServerCalls() {
       });
     } catch (err) {
       alert.show("Error: Can't increase quantity!", { type: "error" });
+    } finally {
+      setIsLoading(false);
     }
   };
 
-  const decreaseQuantity = async (productId) => {
+  const decreaseQuantity = async (productId, setIsLoading) => {
     try {
+      setIsLoading(true);
       const response = await axios.post(
         `/api/user/cart/${productId}`,
         { action: { type: "decrement" } },
@@ -96,6 +103,8 @@ function useCartServerCalls() {
       });
     } catch (err) {
       alert.show("Error: Can't decrease quantity!", { type: "error" });
+    } finally {
+      setIsLoading(false);
     }
   };
   return { addToCart, deleteFromCart, increaseQuantity, decreaseQuantity };

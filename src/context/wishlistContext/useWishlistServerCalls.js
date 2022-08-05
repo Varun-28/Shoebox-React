@@ -29,8 +29,9 @@ function useWishlistServerCalls() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [token]);
 
-  const addToWishlist = async (product) => {
+  const addToWishlist = async (product, setIsLoading) => {
     try {
+      setIsLoading(true);
       if (wishlistState.items.find((item) => item._id === product._id)) {
         alert.show("Already In Cart", { type: "info" });
       } else {
@@ -49,6 +50,8 @@ function useWishlistServerCalls() {
       }
     } catch (err) {
       alert.show("Error: Can't add to Wishlist", { type: "error" });
+    } finally {
+      setIsLoading(false);
     }
   };
 

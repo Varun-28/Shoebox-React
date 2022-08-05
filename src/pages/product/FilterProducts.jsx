@@ -2,7 +2,6 @@ import { React } from "react";
 import "./product.css";
 import { Card } from "../../components/Card";
 import { useProduct } from "../../context/productContext/product-context.js";
-import { Loading } from "../../components/Loading";
 
 function FilterProducts({ search, drawerVisibility, setDrawerVisibility }) {
   const { filteredProducts } = useProduct();
@@ -35,9 +34,9 @@ function FilterProducts({ search, drawerVisibility, setDrawerVisibility }) {
 
       <div className="product-cards">
         {filteredProducts.length === 0 && searchedProducts.length === 0 ? (
-          <Loading />
+          <p className="text-center mt-2 text-md font-extrabold">No products available 😬</p>
         ) : searchedProducts.length === 0 ? (
-          <p className="text-center mt-2 text-lg">No Results Found! 😵</p>
+          <p className="text-center mt-2 text-md font-extrabold">No Results Found! 😵</p>
         ) : (
           searchedProducts.map((product) => (
             <Card product={product} key={product._id} />

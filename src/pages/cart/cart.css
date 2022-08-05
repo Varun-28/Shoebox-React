@@ -2,6 +2,7 @@
 
 .cart-container {
     text-align: center;
+    margin-top: 2rem;
 }
 
 .bill-container {
@@ -48,9 +49,20 @@
     border-radius: 2px;
 }
 
+.cart-img{
+    width: 12rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.cart-content{
+    width: 12rem;
+    height: auto;
+}
+
 @media only screen and (min-width: 800px) {
     .cart-component {
-        flex-direction: row;
+        flex-direction: row-reverse;
         justify-content: space-evenly;
     }
 

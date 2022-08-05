@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Empty } from "../../components/Empty";
 import { useCartServerCalls } from "../../context/cartContext/useCartServerCalls";
 import { useWishlistServerCalls } from "../../context/wishlistContext/useWishlistServerCalls";
@@ -9,9 +9,10 @@ function Wishlist() {
   const { wishlistState } = useWishlist();
   const { deleteFromWishlist } = useWishlistServerCalls();
   const { addToCart } = useCartServerCalls();
+  const [isLoading, setIsLoading] = useState(false);
 
   function cartHandler(item) {
-    addToCart({ ...item });
+    addToCart({ ...item }, setIsLoading);
     deleteFromWishlist(item._id);
   }
 
@@ -40,6 +41,7 @@ function Wishlist() {
                 <button
                   className="card-btn-primary"
                   onClick={() => cartHandler(item)}
+                  disabled={isLoading}
                 >
                   Add to cart
                 </button>

@@ -23,11 +23,12 @@ function AddressList({ setShowForm, setIsEditing, setSelectAddress }) {
       </div>
       <div className="address-list px-8 py-4">
         {address.map((item) => (
-          <div
+          <label
             key={item.id}
             className="address-item"
-            onClick={() => setSelectAddress(item)}
           >
+          <input onClick={() => setSelectAddress(item)} name="addresses" type="radio" />
+          <div className="address-content">
             <p className="font-semibold">{item.fullName}</p>
             <p className="phone">{item.contact}</p>
             <p className="sub-text">
@@ -61,7 +62,8 @@ function AddressList({ setShowForm, setIsEditing, setSelectAddress }) {
                 <i className="fa-solid fa-trash-can"></i>
               </button>
             </div>
-          </div>
+            </div>
+          </label>
         ))}
       </div>
     </div>
