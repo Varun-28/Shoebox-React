@@ -33,7 +33,7 @@ function useWishlistServerCalls() {
     try {
       setIsLoading(true);
       if (wishlistState.items.find((item) => item._id === product._id)) {
-        alert.show("Already In Cart", { type: "info" });
+        alert.show("Already In Wishlist", { type: "info" });
       } else {
         const response = await axios.post(
           "/api/user/wishlist",
