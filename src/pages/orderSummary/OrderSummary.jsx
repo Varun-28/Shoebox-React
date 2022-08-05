@@ -68,7 +68,7 @@ export const OrderSummary = () => {
                           <div className="order-items">
                             <div className="item-name">Price:</div>
                             <div className="placed-price">
-                              Rs.{latestOrder.amount}
+                              Rs.{product.price}
                             </div>
                           </div>
 
