@@ -6,3 +6,4 @@ export { PrivateAuth } from "./PrivateAuth.js";
 export { CheckoutBill } from "./CheckoutBill";
 export { AddressForm } from "./AddressForm";
 export { AddressList } from "./AddressList";
+export { NotFound } from "./NotFound";

@@ -1,16 +1,25 @@
 import "./App.css";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Home, Product, Login, Signup, Cart, Wishlist, Checkout } from "./pages/pages";
+import {
+  Home,
+  Product,
+  Login,
+  Signup,
+  Cart,
+  Wishlist,
+  Checkout,
+  OrderSummary,
+  ProductDetail
+} from "./pages/pages";
 import {
   Navbar,
   Footer,
   RequiresAuth,
   PrivateAuth,
+  NotFound
 } from "./components/Components.jsx";
 import Mockman from "mockman-js";
-import { NotFound } from "./components/NotFound";
-import { ProductDetail } from "./pages/productDetail/ProductDetail";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -62,6 +71,14 @@ function App() {
             element={
               <RequiresAuth>
                 <Checkout />
+              </RequiresAuth>
+            }
+          />
+          <Route
+            path="/order/:orderId"
+            element={
+              <RequiresAuth>
+                <OrderSummary />
               </RequiresAuth>
             }
           />

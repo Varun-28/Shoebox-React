@@ -12,6 +12,7 @@ import { Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
 import { options } from "./utilities/alertOptions";
 import { AddressProvider } from "./context/addressContext/address-context";
+import { OrderProvider } from "./context/orderContext/orderContext";
 
 // Call make Server
 makeServer();
@@ -26,9 +27,11 @@ ReactDOM.render(
           <CartProvider>
             <AuthProvider>
               <AddressProvider>
-                <AlertProvider template={AlertTemplate} {...options}>
-                  <App />
-                </AlertProvider>
+                <OrderProvider>
+                  <AlertProvider template={AlertTemplate} {...options}>
+                    <App />
+                  </AlertProvider>
+                </OrderProvider>
               </AddressProvider>
             </AuthProvider>
           </CartProvider>

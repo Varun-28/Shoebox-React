@@ -1,8 +1,10 @@
 import { React, useState, useEffect } from "react";
 import { useCart } from "../context/cartContext/cart-context";
 import "../pages/cart/cart.css";
-import { useAuth } from "../context/authContext/auth-context";
 import { useAlert } from "react-alert";
+import { v4 as uuid } from "uuid";
+import { useNavigate } from "react-router-dom";
+import { useOrder } from "../context/orderContext/orderContext";
 
 function CheckoutBill({ selectedAddress }) {
   const { cartState } = useCart();
@@ -12,7 +14,8 @@ function CheckoutBill({ selectedAddress }) {
     deliveryCharge: 40,
     prodPrice: 0,
   });
-  const { authState } = useAuth();
+  const navigate = useNavigate();
+	const { dispatchOrder } = useOrder();
 
   useEffect(() => {
     if (cartState.items.length !== 0) {
@@ -67,10 +70,25 @@ function CheckoutBill({ selectedAddress }) {
         currency: "INR",
         name: "The Shoebox",
         description: "Thank you for shopping with us",
-        prefill: {
-          name: `${authState.firstName} ${authState.lastName}`,
-          email: authState.email,
-        },
+        handler: async function (response) {
+					const orderId = uuid().toString().split("-")[0];
+
+					const orderData = {
+						products: cartState,
+						amount: price.totalPrice,
+
+						paymentId: response.razorpay_payment_id,
+						orderId,
+						delivery: selectedAddress,
+					};
+					dispatchOrder({ type: "GET_ORDERS", payload: orderData });
+					navigate(`/order/${orderId}`);
+				},
+				prefill: {
+					name: "Varun Verma",
+					email: "varun@gmail.com",
+					contact: "8877573687",
+				},
       };
 
       const paymentObject = new window.Razorpay(options);

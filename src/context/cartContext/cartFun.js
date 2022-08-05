@@ -15,8 +15,13 @@ export const cartFun = (cartState, action) => {
     case "INCREMENT-DECREMENT":
       return {
         ...cartState,
-        items: [...action.payload]
-      }
+        items: [...action.payload],
+      };
+    case "RESET-CART":
+      return {
+        quantity: 0,
+        items: [],
+      };
     default:
       return cartState;
   }
