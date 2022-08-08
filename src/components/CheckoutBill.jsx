@@ -106,7 +106,7 @@ function CheckoutBill({ selectedAddress }) {
             <div key={item._id} className="mb-4 cart-item-wrapper">
               <p className="font-semibold">{item.brand}</p>
               <p className="text-base">{item.title}</p>
-              <p className="font-md"><span className="gray-text">Price:</span> {item.price} x {item.qty}</p>
+              <p className="font-md"><span className="gray-text">Price:</span> {item.price} (Qty: {item.qty})</p>
             </div>
           ))}
       </div>

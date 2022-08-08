@@ -1,13 +1,16 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import heroImg from "../../assets/landing-img.png";
 import wave from "../../assets/wave.svg";
 import { CategoryCards } from "../../components/CategoryCards";
 import "./home.css";
+import { useProduct } from "../../context/productContext/product-context";
 
 function Home() {
   const [categories, setCategories] = useState([]);
+  const { dispatch } = useProduct();
+  const navigate = useNavigate();
 
   useEffect(() => {
     try {
@@ -26,9 +29,10 @@ function Home() {
         <div className="hero-content flex flex-col justify-center p-4">
           <h1 className="font-semibold">Shoes from which you shine through.</h1>
           <p className="mx-0 my-4">The journey begins with the perfect pair.</p>
-          <Link to="/product">
-            <button className="btn btn-primary btn-hero">Shop Now</button>
-          </Link>
+            <button onClick={() => {
+              dispatch({type: "CLEAR"});
+              navigate("/product");
+            }} className="btn btn-primary btn-hero">Shop Now</button>
         </div>
         <div className="hero-img">
           <img

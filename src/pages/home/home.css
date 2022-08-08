@@ -7,7 +7,8 @@
 .btn-hero {
     background-color: var(--cta-color);
     color: var(--primary-color);
-    margin: 3rem 0;
+    margin: 3rem auto;
+    width: max-content;
 }
 
 .btn-hero:hover {
@@ -42,5 +43,10 @@
     .hero .hero-content {
         text-align: left;
         margin-left: 1rem;
+    }
+
+    .btn-hero {
+        margin: 3rem 0;
+        width: max-content;
     }
 }
